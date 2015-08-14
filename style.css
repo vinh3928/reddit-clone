@@ -1,0 +1,108 @@
+*, *:after, *:before {
+  box-sizing: border-box; }
+
+* {
+  /*border: 1px solid green;*/ }
+
+h4 {
+  font-size: 30px;
+  display: inline-block; }
+
+body {
+  font-family: 'Abel', sans-serif; }
+
+a {
+  text-decoration: none;
+  color: blue; }
+
+aside {
+  background-color: grey;
+  font-size: 20px;
+  padding: 10px; }
+  aside > a {
+    margin: 0 20px; }
+  aside input {
+    display: inline-block;
+    border: 1px solid green; }
+
+nav {
+  display: inline-block;
+  position: relative;
+  border: 1px solid green;
+  margin: 0 20px; }
+  nav ul {
+    position: absolute; }
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 0; }
+  .container section {
+    background-color: rgba(223, 189, 90, 0.8);
+    margin: 20px 0;
+    padding: 0; }
+
+.picture {
+  display: inline-block;
+  width: 30%;
+  vertical-align: top;
+  margin-right: 10px;
+  height: 200px; }
+
+.inner-container {
+  width: 68%;
+  display: inline-block; }
+
+.green {
+  color: green; }
+
+.red {
+  color: red; }
+
+.inline-block {
+  display: inline-block; }
+
+.author {
+  text-align: right;
+  margin-bottom: 10px; }
+
+.content {
+  overflow: scroll;
+  height: 110px; }
+
+.date {
+  display: inline-block;
+  margin-bottom: 10px; }
+
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 7px; }
+
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.5); }
+
+.new-post {
+  width: 80%;
+  margin: 0 auto; }
+  .new-post label {
+    display: block;
+    padding: 10px 0; }
+  .new-post input[type="text"] {
+    display: block;
+    width: 100%;
+    padding: 5px 10px;
+    font-size: 20px;
+    border-radius: 5px;
+    border: 1px solid black; }
+  .new-post input[type="submit"] {
+    padding: 5px;
+    margin-top: 10px;
+    font-size: 20px; }
+
+form input.ng-invalid.ng-touched {
+  background-color: #FA787E; }
+
+form input.ng-valid.ng-touched {
+  background-color: #78FA89; }

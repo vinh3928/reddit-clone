@@ -1,0 +1,66 @@
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 0;
+
+  section {
+    background-color: rgba(223, 189, 90, 0.8);
+    margin: 20px 0;
+    padding: 0;
+  }
+}
+
+.picture-container {
+}
+
+.picture {
+  display: inline-block;
+  width: 30%;
+  vertical-align: top;
+  margin-right: 10px;
+  height: 200px;
+}
+
+.inner-container {
+  width: 68%;
+  display: inline-block;
+}
+
+.green {
+  color: green;
+}
+
+.red {
+  color: red;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.author {
+  text-align: right;
+  margin-bottom: 10px;
+}
+
+.content {
+  overflow: scroll;
+  height: 110px;
+}
+
+.date {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 7px;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0,0,0,.5);
+    -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+}
+

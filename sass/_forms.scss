@@ -1,0 +1,33 @@
+.new-post {
+  width: 80%;
+  margin: 0 auto;
+    label {
+      display: block;
+      padding: 10px 0;
+    }
+
+    input[type="text"] {
+      display: block;
+      width: 100%;
+      padding: 5px 10px;
+      font-size: 20px;
+      border-radius: 5px;
+      border: 1px solid black;
+    }
+    
+    input[type="submit"] {
+      padding: 5px;
+      margin-top: 10px;
+      font-size: 20px;
+
+    }
+
+}
+
+form input.ng-invalid.ng-touched {
+  background-color: #FA787E;
+}
+
+form input.ng-valid.ng-touched {
+  background-color: #78FA89;
+}
