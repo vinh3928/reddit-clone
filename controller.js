@@ -6,7 +6,7 @@ myApp.controller("users", ["$scope", function($scope) {
       vote: -9,
       author: "Ned Stark",
       content: "Vestibulum id urna nec massa congue gravida a ut nisi. Nullam sit amet urna rutrum, faucibus quam quis, sagittis ipsum. Integer condimentum, felis id ultricies blandit, velit eros imperdiet elit, ut vulputate arcu purus sed elit. Morbi efficitur cursus dictum. Cras sagittis sapien vel quam euismod feugiat. Cras a risus quis libero venenatis aliquam. In tristique maximus convallis.Vestibulum id urna nec massa congue gravida a ut nisi. Nullam sit amet urna rutrum, faucibus quam quis, sagittis ipsum. Integer condimentum, felis id ultricies blandit, velit eros imperdiet elit, ut vulputate arcu purus sed elit. Morbi efficitur cursus dictum. Cras sagittis sapien vel quam euismod feugiat. Cras a risus quis libero venenatis aliquam. In tristique maximus convallis",
-      date: 1439201833740,
+      date: moment(1439201833740).calendar(),
       imageURL: "http://www.liftopia.com/media/product/5051/102416_Aspen-Snowmass-Perfect-Summer-Package.jpg",
       countOrder: 0,
       comments: [
@@ -19,7 +19,7 @@ myApp.controller("users", ["$scope", function($scope) {
       vote: 12,
       author: "Jon Snow",
       content: "Vestibulum id urna nec massa congue gravida a ut nisi. Nullam sit amet urna rutrum, faucibus quam quis, sagittis ipsum. Integer condimentum, felis id ultricies blandit, velit eros imperdiet elit, ut vulputate arcu purus sed elit. Morbi efficitur cursus dictum. Cras sagittis sapien vel quam euismod feugiat. Cras a risus quis libero venenatis aliquam. In tristique maximus convallis.",
-      date: 1439313833740,
+      date: moment(1439313833740).calendar(),
       imageURL: "https://dombestlist.files.wordpress.com/2011/08/boulder-colorado.jpg",
       countOrder: 1,
       comments: [
@@ -40,7 +40,7 @@ myApp.controller("users", ["$scope", function($scope) {
       content: "Vestibulum id urna nec massa congue gravida a ut nisi. Nullam sit amet urna rutrum, faucibus quam quis, sagittis ipsum. Integer condimentum, felis id ultricies blandit, velit eros imperdiet elit, ut vulputate arcu purus sed elit. Morbi efficitur cursus dictum. Cras sagittis sapien vel quam euismod feugiat. Cras a risus quis libero venenatis aliquam. In tristique maximus convallis.",
       imageURL: "http://www.hotelroomsearch.net/im/2014/12/denver-colorado.jpg",
       countOrder: 2,
-      date: 1439413433740,
+      date: moment(1439413433740).calendar(),
       comments: [
         {name: "Tracey",
           comment: "That's one big city!"
@@ -54,7 +54,7 @@ myApp.controller("users", ["$scope", function($scope) {
       vote: 4,
       author: "Tyrion Lannister",
       content: "Vestibulum id urna nec massa congue gravida a ut nisi. Nullam sit amet urna rutrum, faucibus quam quis, sagittis ipsum. Integer condimentum, felis id ultricies blandit, velit eros imperdiet elit, ut vulputate arcu purus sed elit. Morbi efficitur cursus dictum. Cras sagittis sapien vel quam euismod feugiat. Cras a risus quis libero venenatis aliquam. In tristique maximus convallis.",
-      date: 1439496091029,
+      date: moment(1439496091029).calendar(),
       imageURL: "http://pics4.city-data.com/cpicv/vfiles9625.jpg",
       countOrder: 3,
       comments: [
@@ -64,7 +64,7 @@ myApp.controller("users", ["$scope", function($scope) {
       vote: -1,
       author: "Jaime Lannister",
       content: "Vestibulum id urna nec massa congue gravida a ut nisi. Nullam sit amet urna rutrum, faucibus quam quis, sagittis ipsum. Integer condimentum, felis id ultricies blandit, velit eros imperdiet elit, ut vulputate arcu purus sed elit. Morbi efficitur cursus dictum. Cras sagittis sapien vel quam euismod feugiat. Cras a risus quis libero venenatis aliquam. In tristique maximus convallis.",
-      date: Date.now(),
+      date: moment(1439566425479).calendar(),
       imageURL: "http://www.liveinpueblo.com/briefcase/99572_9232014102144AM34267.JPG",
       countOrder: 4,
       comments: [
@@ -80,7 +80,7 @@ myApp.controller("users", ["$scope", function($scope) {
       vote: -5,
       author: "Petyr Baelish",
       content: "Vestibulum id urna nec massa congue gravida a ut nisi. Nullam sit amet urna rutrum, faucibus quam quis, sagittis ipsum. Integer condimentum, felis id ultricies blandit, velit eros imperdiet elit, ut vulputate arcu purus sed elit. Morbi efficitur cursus dictum. Cras sagittis sapien vel quam euismod feugiat. Cras a risus quis libero venenatis aliquam. In tristique maximus convallis.",
-      date: Date.now(),
+      date: moment(1439569455453).calendar(),
       imageURL: "http://www.gatewayreservations.com/wp-content/uploads/2014/10/durango-colorado-460x247.jpg",
       countOrder: 5,
       comments: [
@@ -110,9 +110,10 @@ myApp.controller("users", ["$scope", function($scope) {
     object.comments = [];
     $scope.posts.push(object);
   };
-  $scope.currentClick = "";
-  $scope.upvote = function() {
-    
-
+  $scope.upvote = function(count) {
+    $scope.posts[count].vote++;
+  };
+  $scope.downvote = function(count) {
+    $scope.posts[count].vote--;
   };
 }]);

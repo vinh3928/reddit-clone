@@ -12,10 +12,10 @@
   <body ng-controller="users">
     <aside>
         <h2 class="inline-block">Reddit Clone</h2>
-        <a href="" ng-click="openPost = !openPost">Submit Post</a>
+        <a href="" ng-click="openPost = !openPost; navDown = false">Submit Post</a>
         <input type="text" ng-model="searchText" placeholder="Search"/>
       <nav>
-        <a href="" ng-click="navDown = !navDown">Sort by {{selection}}</a>
+        <a href="" ng-click="navDown = !navDown; openPost = false">Sort by {{selection}}</a>
         <ul ng-show="navDown" ng-init="selection = 'date'">
           <li ng-click="selection = 'vote'; ordering = !ordering">Vote</li>
           <li ng-click="selection = 'date'; ordering = !ordering">Date</li>
@@ -23,7 +23,7 @@
         </ul>
       </nav>
     </aside>
-    <form class="new-post" ng-submit="newPost()" ng-show="openPost">
+    <form class="new-post" ng-submit="newPost(); openPost = false" ng-show="openPost">
       <label for="title">Title</label>
       <input type="text" name="title" id="title" value="" ng-model="title" placeholder="Title" required/>
       <label for="author">Author</label>
@@ -39,15 +39,15 @@
         <img class="picture" ng-src="{{post.imageURL}}" alt="" />
         <div class="inner-container">
           <h4>{{post.title}} |
-            <i ng-click="{{currentClick}}={{post.countOrder}}; upvote()"fa fa-arrow-up"></i>
-            <i class="fa fa-arrow-down"></i>
+            <i ng-click="upvote(post.countOrder)" class="fa fa-arrow-up"></i>
+            <i ng-click="downvote(post.countOrder)" class="fa fa-arrow-down"></i>
           <span ng-class="{'green': post.vote > 0, 'red': post.vote < 0}">{{post.vote}}</span>
           </h4>
           <p class="author">By {{post.author}}</p>
           <div class="content">
             <p>{{post.content}}</p>
           </div>
-          <p class="date"><i class="fa fa-clock-o"></i>{{post.date | date}}</p>
+          <p class="date"><i class="fa fa-clock-o"></i> {{post.date}}</p>
           <p class="inline-block">|</p>
           <a ng-click="commentOpen = !commentOpen; addComment = false" class="comments" href=""><i class="fa fa-comment"></i><ng-pluralize count="post.comments.length" when="{'0': '0 comments', '1': '1 comment', 'other': '{} comments'}"></ng-pluralize></a>
           <p class="inline-block">|</p>
@@ -57,10 +57,10 @@
               <input type="text" ng-model="name" name="name" id="name" value="" required />
               <label for="comment">Comment</label>
               <input type="text" ng-model="comment" name="comment" id="" value="" required />
-              <input type="text" ng-model="countOrder" name="" value="" ng-init="countOrder = post.countOrder"/>
+              <input type="hidden" ng-model="countOrder" name="" value="" ng-init="countOrder = post.countOrder"/>
               <input type="submit" name="" id="" value="Add Comment" />
             </form>
-          <div ng-show="commentOpen" ng-repeat="com in post.comments">
+          <div class="comment-block" ng-show="commentOpen" ng-repeat="com in post.comments">
             <p class="inline-block">{{com.name}} - </p>
             <p class="inline-block">{{com.comment}}</p>
           </div>
@@ -69,6 +69,7 @@
     </div>
     <script type="text/javascript" charset="utf-8" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" charset="utf-8" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular.js"></script>
+    <script type="text/javascript" charset="utf-8" src="http://momentjs.com/downloads/moment.min.js"></script>
     <script type="text/javascript" charset="utf-8" src="./controller.js"></script>
     <script type="text/javascript" charset="utf-8" src="./app.js"></script>
   </body>

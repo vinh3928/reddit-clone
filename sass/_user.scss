@@ -2,12 +2,14 @@
 .container {
   width: 80%;
   margin: 0 auto;
-  padding: 0;
 
   section {
     background-color: rgba(223, 189, 90, 0.8);
     margin: 20px 0;
-    padding: 0;
+    padding: 10px;
+    form {
+      margin-top: 10px;
+    }
   }
 }
 
@@ -40,18 +42,18 @@
 }
 
 .author {
-  text-align: right;
-  margin-bottom: 10px;
+  float: right;
 }
 
 .content {
   overflow: scroll;
   height: 110px;
+  margin-top: 30px;
+  margin-bottom: 10px;
 }
 
 .date {
   display: inline-block;
-  margin-bottom: 10px;
 }
 
 ::-webkit-scrollbar {
@@ -61,6 +63,15 @@
 ::-webkit-scrollbar-thumb {
     border-radius: 4px;
     background-color: rgba(0,0,0,.5);
-    -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+    -webkit-box-shadow: 0 0 1px rgba(223, 189, 90, 0.8);
 }
 
+::-webkit-scrollbar-corner  {
+
+    background-color: transparent;
+
+}
+
+.comment-block {
+  margin-top: 10px;
+}

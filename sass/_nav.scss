@@ -1,14 +1,22 @@
 
 aside {
-  background-color: grey;
+  background-color: rgba(62, 122, 42, 1);
   font-size: 20px;
   padding: 10px;
+  h2 {
+    font-weight: 800;
+
+  }
   >a {
     margin: 0 20px;
+    color: white;
   }
   input {
     display: inline-block;
     border: 1px solid green;
+    font-size: 20px;
+    height: 30px;
+    padding: 5px;
   }
 }
 
@@ -17,8 +25,24 @@ nav {
   position: relative;
   border: 1px solid green;
   margin: 0 20px;
+  width: 120px;
+  text-align: center;
+  a {
+    color: white;
+  }
   ul {
     position: absolute;
+    background: white;
+    width: 120px;
+    text-align: left;
+    li {
+      padding: 5px;
+      &:hover {
+        background-color: rgba(131, 179, 65, 1);
+
+      }
+
+    }
   }
 
 }

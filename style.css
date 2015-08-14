@@ -16,31 +16,49 @@ a {
   color: blue; }
 
 aside {
-  background-color: grey;
+  background-color: #3e7a2a;
   font-size: 20px;
   padding: 10px; }
+  aside h2 {
+    font-weight: 800; }
   aside > a {
-    margin: 0 20px; }
+    margin: 0 20px;
+    color: white; }
   aside input {
     display: inline-block;
-    border: 1px solid green; }
+    border: 1px solid green;
+    font-size: 20px;
+    height: 30px;
+    padding: 5px; }
 
 nav {
   display: inline-block;
   position: relative;
   border: 1px solid green;
-  margin: 0 20px; }
+  margin: 0 20px;
+  width: 120px;
+  text-align: center; }
+  nav a {
+    color: white; }
   nav ul {
-    position: absolute; }
+    position: absolute;
+    background: white;
+    width: 120px;
+    text-align: left; }
+    nav ul li {
+      padding: 5px; }
+      nav ul li:hover {
+        background-color: #83b341; }
 
 .container {
   width: 80%;
-  margin: 0 auto;
-  padding: 0; }
+  margin: 0 auto; }
   .container section {
     background-color: rgba(223, 189, 90, 0.8);
     margin: 20px 0;
-    padding: 0; }
+    padding: 10px; }
+    .container section form {
+      margin-top: 10px; }
 
 .picture {
   display: inline-block;
@@ -63,16 +81,16 @@ nav {
   display: inline-block; }
 
 .author {
-  text-align: right;
-  margin-bottom: 10px; }
+  float: right; }
 
 .content {
   overflow: scroll;
-  height: 110px; }
+  height: 110px;
+  margin-top: 30px;
+  margin-bottom: 10px; }
 
 .date {
-  display: inline-block;
-  margin-bottom: 10px; }
+  display: inline-block; }
 
 ::-webkit-scrollbar {
   -webkit-appearance: none;
@@ -81,7 +99,13 @@ nav {
 ::-webkit-scrollbar-thumb {
   border-radius: 4px;
   background-color: rgba(0, 0, 0, 0.5);
-  -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.5); }
+  -webkit-box-shadow: 0 0 1px rgba(223, 189, 90, 0.8); }
+
+::-webkit-scrollbar-corner {
+  background-color: transparent; }
+
+.comment-block {
+  margin-top: 10px; }
 
 .new-post {
   width: 80%;
