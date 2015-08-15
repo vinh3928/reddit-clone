@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" href="./reset.css" title="" type="text/css" />
+    <link rel="stylesheet" href="./css/reset.css" title="" type="text/css" />
     <link rel="stylesheet" href="./font-awesome/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="./style.css" title="" type="text/css" />
+    <link rel="stylesheet" href="./css/style.css" title="" type="text/css" />
     <link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,300|Abel|PT+Sans+Caption' rel='stylesheet' type='text/css'>
     <title></title>
   </head>
@@ -35,7 +35,7 @@
       <input type="submit" name="" id="" value="Submit Post" />
     </form>
     <div class="container">
-      <section ng-repeat="post in posts | orderBy:selection:ordering | filter:searchText:strict">
+      <section class="post-sections" ng-repeat="post in posts | orderBy:selection:ordering | filter:searchText:strict">
         <img class="picture" ng-src="{{post.imageURL}}" alt="" />
         <div class="inner-container">
           <h4>{{post.title}} |
@@ -68,9 +68,10 @@
       </section>
     </div>
     <script type="text/javascript" charset="utf-8" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script type="text/javascript" charset="utf-8" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular.js"></script>
+    <script type="text/javascript" charset="utf-8" src="./bower_components/angular/angular.js"></script>
+    <script type="text/javascript" charset="utf-8" src="./bower_components/angular-animate/angular-animate.js"></script>
     <script type="text/javascript" charset="utf-8" src="http://momentjs.com/downloads/moment.min.js"></script>
-    <script type="text/javascript" charset="utf-8" src="./controller.js"></script>
-    <script type="text/javascript" charset="utf-8" src="./app.js"></script>
+    <script type="text/javascript" charset="utf-8" src="./js/controller.js"></script>
+    <script type="text/javascript" charset="utf-8" src="./js/app.js"></script>
   </body>
 </html>
