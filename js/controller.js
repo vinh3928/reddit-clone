@@ -38,7 +38,7 @@ myApp.controller("users", ["$scope", function($scope) {
       vote: 9,
       author: "Daenerys Targaryen",
       content: "Vestibulum id urna nec massa congue gravida a ut nisi. Nullam sit amet urna rutrum, faucibus quam quis, sagittis ipsum. Integer condimentum, felis id ultricies blandit, velit eros imperdiet elit, ut vulputate arcu purus sed elit. Morbi efficitur cursus dictum. Cras sagittis sapien vel quam euismod feugiat. Cras a risus quis libero venenatis aliquam. In tristique maximus convallis.",
-      imageURL: "http://www.hotelroomsearch.net/im/2014/12/denver-colorado.jpg",
+      imageURL: "http://www.weddingstylemagazine.com/sites/default/files/denver-colorado-travel-2014-004.jpg",
       countOrder: 2,
       date: moment(1439413433740).calendar(),
       comments: [
