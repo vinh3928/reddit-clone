@@ -103,10 +103,11 @@ myApp.controller("users", ["$scope","$firebaseArray", function($scope, $firebase
     var numb = parseInt(this.countOrder);
     if ($scope.posts[numb].comments === undefined) {
       $scope.posts[numb].comments = array;
+      $scope.posts.$save(numb);
     } else {
       $scope.posts[numb].comments.push(object);
+      $scope.posts.$save(numb);
     }
-    console.log($scope.posts[numb]);
 
     //$scope.posts.$save(numb);
   };
